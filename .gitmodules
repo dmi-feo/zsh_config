@@ -1,0 +1,6 @@
+[submodule "plugins/zsh-autosuggestions"]
+	path = plugins/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "hosts"]
+	path = hosts
+	url = git@github.com:dmi-feo/zsh_config_hosts.git

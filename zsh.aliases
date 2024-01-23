@@ -1,0 +1,26 @@
+alias grep='grep --color=auto -G'
+alias fgrep='fgrep -G'
+alias egrep='egrep -G'
+
+alias ls='ls -G'
+alias ll='ls -ohG'
+alias la='ls -oAhG'
+alias l='ls -CFG'
+
+alias gs="git status"
+alias gc="git commit -m"
+alias gl="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --no-merges --perl-regexp"
+alias ga="git add"
+alias gp="git pull --rebase && git push"
+alias gch="git checkout"
+alias gr="git rebase"
+alias gd="git diff"
+alias gb="git branch"
+
+alias ta='tmux attach'
+
+alias py3='ipython3'
+alias py='ipython'
+
+alias script-clean=sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g"
+alias script=script -q
