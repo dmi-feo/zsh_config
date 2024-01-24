@@ -4,3 +4,6 @@
 [submodule "hosts"]
 	path = hosts
 	url = git@github.com:dmi-feo/zsh_config_hosts.git
+[submodule "plugins/colors"]
+	path = plugins/colors
+	url = https://github.com/zpm-zsh/colors

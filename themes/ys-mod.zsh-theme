@@ -1,11 +1,11 @@
 # Based on yc.theme Yad Smood from ohmyzsh package
 
 # VCS
-YS_VCS_PROMPT_PREFIX1=" %{$reset_color%}on%{$fg[blue]%} "
-YS_VCS_PROMPT_PREFIX2=":%{$fg[cyan]%}"
-YS_VCS_PROMPT_SUFFIX="%{$reset_color%}"
-YS_VCS_PROMPT_DIRTY=" %{$fg[red]%}x"
-YS_VCS_PROMPT_CLEAN=" %{$fg[green]%}o"
+YS_VCS_PROMPT_PREFIX1=" %{$c[reset]%}on%{$c[blue]%} "
+YS_VCS_PROMPT_PREFIX2=":%{$c[cyan]%}"
+YS_VCS_PROMPT_SUFFIX="%{$c[reset]%}"
+YS_VCS_PROMPT_DIRTY=" %{$c[red]%}x"
+YS_VCS_PROMPT_CLEAN=" %{$c[green]%}o"
 
 # Git info
 local git_info='$(git_prompt_info)'
@@ -16,24 +16,24 @@ ZSH_THEME_GIT_PROMPT_CLEAN="$YS_VCS_PROMPT_CLEAN"
 
 # Virtualenv
 local venv_info='$(virtenv_prompt)'
-YS_THEME_VIRTUALENV_PROMPT_PREFIX=" %{$fg[cyan]%}[venv:"
-YS_THEME_VIRTUALENV_PROMPT_SUFFIX="] %{$reset_color%}%"
+YS_THEME_VIRTUALENV_PROMPT_PREFIX=" %{$c[purple]%}[venv:"
+YS_THEME_VIRTUALENV_PROMPT_SUFFIX="] %{$c[reset]%}%"
 virtenv_prompt() {
 	[[ -n "${VIRTUAL_ENV:-}" ]] || return
 	echo "${YS_THEME_VIRTUALENV_PROMPT_PREFIX}${VIRTUAL_ENV:t}${YS_THEME_VIRTUALENV_PROMPT_SUFFIX}"
 }
 
-local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
+local exit_code="%(?,,C:%{$c[red]%}%?%{$c[reset]%})"
 
 PROMPT="
-%{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
-%(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
-%{$reset_color%}@ \
-%{$fg[green]%}%m \
-%{$reset_color%}in \
-%{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}\
+%{$terminfo[bold]$c[blue]%}#%{$c[reset]%} \
+%(#,%{$bg[yellow]%}%{$c[black]%}%n%{$c[reset]%},%{$c[cyan]%}%n) \
+%{$c[reset]%}@ \
+%{$c[green]%}%m \
+%{$c[reset]%}in \
+%{$terminfo[bold]$c[yellow]%}%~%{$c[reset]%}\
 ${git_info}\
 ${venv_info}\
  \
 [%*] $exit_code
-%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+%{$terminfo[bold]$c[red]%}$ %{$c[reset]%}"

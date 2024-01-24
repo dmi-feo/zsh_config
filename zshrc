@@ -16,19 +16,16 @@ unset lib_file
 
 fpath+=$ZDOTDIR/completions
 
-ZSH_THEME="ys-mod"
-autoload -U colors && colors
-setopt prompt_subst
-export LSCOLORS="Gxfxcxdxbxegedabagacad"
-source "$ZDOTDIR/themes/$ZSH_THEME.zsh-theme"
-
 ZSH_PLUGINS="$ZDOTDIR/plugins"
-plugins=(zsh-autosuggestions rg)
-
+plugins=(zsh-autosuggestions rg colors)
 for plugin ($plugins); do
   load_plugin $ZSH_PLUGINS $plugin
 done
 unset plugin
+
+ZSH_THEME="ys-mod"
+setopt prompt_subst
+source "$ZDOTDIR/themes/$ZSH_THEME.zsh-theme"
 
 if [ -d "$HOME/bin" ] ; then
   export PATH=$PATH:$HOME/bin
