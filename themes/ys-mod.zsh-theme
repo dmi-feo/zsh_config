@@ -16,8 +16,8 @@ ZSH_THEME_GIT_PROMPT_CLEAN="$YS_VCS_PROMPT_CLEAN"
 
 # Virtualenv
 local venv_info='$(virtenv_prompt)'
-YS_THEME_VIRTUALENV_PROMPT_PREFIX=" %{$fg[green]%}"
-YS_THEME_VIRTUALENV_PROMPT_SUFFIX=" %{$reset_color%}%"
+YS_THEME_VIRTUALENV_PROMPT_PREFIX=" %{$fg[cyan]%}[venv:"
+YS_THEME_VIRTUALENV_PROMPT_SUFFIX="] %{$reset_color%}%"
 virtenv_prompt() {
 	[[ -n "${VIRTUAL_ENV:-}" ]] || return
 	echo "${YS_THEME_VIRTUALENV_PROMPT_PREFIX}${VIRTUAL_ENV:t}${YS_THEME_VIRTUALENV_PROMPT_SUFFIX}"
@@ -33,6 +33,7 @@ PROMPT="
 %{$reset_color%}in \
 %{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}\
 ${git_info}\
+${venv_info}\
  \
 [%*] $exit_code
 %{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
