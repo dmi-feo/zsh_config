@@ -1,2 +1,2 @@
-source "${ZDOTDIR}/my_plugins/pyenv/pyenv.plugin.zsh"
+[ -z "$TMUX"  ] && { tmux attach || exec tmux new-session && exit;}
 
