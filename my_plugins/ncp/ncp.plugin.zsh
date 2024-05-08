@@ -1,5 +1,4 @@
-export PYENV_ROOT="$HOME/.pyenv"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# The next line enables shell command completion for ncp.
+if [ -f "$HOME/nebius-cloud/completion.zsh.inc" ]; then source "$HOME/nebius-cloud/completion.zsh.inc"; fi
+
+export PATH="$HOME/nebius-cloud/bin:$PATH"
